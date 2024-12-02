@@ -622,21 +622,78 @@ import Foundation
 //17. Смержить 2 отсортированных массива
 //
 //[2, 4, 6] [1, 2, 3, 4, 5] -> [1, 2, 2, 3, 4, 4, 5, 6]
+//[4, 5, 6] [1, 2, 3, 4, 4, 5] -> []
 
-func mergeArrays(lhs: [Int], rhs: [Int]) -> [Int]{
-    var firstIndex = Int()
-    var secondIndex = 1
-    var resultArr = [Int]()
-    for _ in (1...(lhs.count > rhs.count ? lhs.count - 1 : rhs.count - 1)) {
-        
-    }
-    return []
-}
+//долго решал задачу с дебагингом (около 2 часов) - не знаю насколько эффективно !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+//func mergeArrays(lhs: [Int], rhs: [Int]) -> [Int]{
+//    var firstArr = lhs
+//    var seconArr = rhs
+//    if seconArr.count < firstArr.count {
+//        (firstArr, seconArr) = (seconArr, firstArr)
+//    }
+//    var firstIndex = Int()
+//    var secondIndex = 1
+//    var indexAppendArr = Int()
+//    var resultArr = [Int]()
+//    while secondIndex <= seconArr.count {
+//        if secondIndex > seconArr.count - 1 {
+//            if seconArr[firstIndex] == firstArr[indexAppendArr] {
+//                resultArr.append(firstArr[indexAppendArr])
+//                break
+//            }
+//            resultArr.append(seconArr[firstIndex])
+//            resultArr.append(firstArr[indexAppendArr])
+//            break
+//        }
+//        if firstArr[indexAppendArr] < seconArr[firstIndex] {
+//            resultArr.append(firstArr[indexAppendArr])
+//            if indexAppendArr + 1 < firstArr.count {
+//                indexAppendArr += 1
+//                continue
+//            }
+//        }
+//        if  seconArr[firstIndex] <= firstArr[indexAppendArr] && firstArr[indexAppendArr] == seconArr[secondIndex] {
+//            resultArr.append(seconArr[firstIndex])
+//            resultArr.append(firstArr[indexAppendArr])
+//            if indexAppendArr + 1 < firstArr.count {
+//                indexAppendArr += 1
+//            }
+//            firstIndex = secondIndex
+//            secondIndex += 1
+//            continue
+//        }
+//        if  seconArr[firstIndex] <= firstArr[indexAppendArr] && firstArr[indexAppendArr] < seconArr[secondIndex] {
+//            resultArr.append(seconArr[firstIndex])
+//            resultArr.append(firstArr[indexAppendArr])
+//            if indexAppendArr + 1 < firstArr.count {
+//                indexAppendArr += 1
+//            }
+//            firstIndex = secondIndex
+//            secondIndex += 1
+//            continue
+//        }
+//        if seconArr[firstIndex] < firstArr[indexAppendArr] && firstArr[indexAppendArr] > seconArr[secondIndex] {
+//            resultArr.append(seconArr[firstIndex])
+//            firstIndex = secondIndex
+//            secondIndex += 1
+//            continue
+//        }
+//        firstIndex += 1
+//        secondIndex += 1
+//    }
+//    return resultArr
+//}
 
-let lhs = [2, 4, 6]
-let rhs = [1, 2, 3, 4, 5]
+//let lhs = [1, 2, 3, 4, 4, 5]
+//let rhs = [4, 5]
 
-print(mergeArrays(lhs: lhs, rhs: rhs))
+//let lhs = [2, 4, 6]
+//let rhs = [1, 2, 3, 4, 5]
+
+//let lhs = [4, 5, 6]
+//let rhs = [1, 2, 3, 4, 4, 5]
+//
+//print(mergeArrays(lhs: lhs, rhs: rhs))
 //
 //
 //
